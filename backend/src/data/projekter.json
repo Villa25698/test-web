@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "title": "oppgave1_css_Webapplikasjoner",
+    "description": "skoleoppgave for å lage en enkel nettside med CSS",
+    "Languages": [
+      "HTML",
+      "CSS"
+    ],
+    "link": "https://github.com/Villa25698/oppgave1_css_Webapplikasjoner",
+    "createdAt": "2024-01-15",
+    "category": "School Project"
+  },
+  {
+    "id": 2,
+    "title": "Software_engineer-g1",
+    "description": "projekt for emnet Software Engineering",
+    "Languages": [
+      "Vue",
+      "javascript",
+      "HTML"
+    ],
+    "link": "https://github.com/Villa25698/Software_engineer-g1",
+    "createdAt": "2024-03-10",
+    "category": "Coursework"
+  },
+  {
+    "id": 3,
+    "title": "password_checker_strength",
+    "description": "sommerprojekt for å øve til java eksamen",
+    "Languages": [
+      "Java"
+    ],
+    "link": "https://github.com/Villa25698/password_checker_stregth",
+    "createdAt": "2024-06-20",
+    "category": "Personal Project"
+  },
+  {
+    "id": 4,
+    "title": "test",
+    "description": "test",
+    "Languages": [
+      "Java"
+    ],
+    "link": "https://hr.lipsum.com/",
+    "createdAt": "2024-09-25",
+    "category": "test"
+  }
+]
