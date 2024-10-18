@@ -1,9 +1,8 @@
 import React from 'react';
-import './styles.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="text-center p-4 bg-gray-200 w-full">
       2024 Bardh Arifi
     </footer>
   );

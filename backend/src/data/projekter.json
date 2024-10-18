@@ -9,7 +9,18 @@
     ],
     "link": "https://github.com/Villa25698/oppgave1_css_Webapplikasjoner",
     "createdAt": "2024-01-15",
-    "category": "School Project"
+    "category": "School Project",
+    "status": "Completed",
+    "tags": [
+      "CSS",
+      "HTML",
+      "Web"
+    ],
+    "public": true,
+    "demos": [
+      "https://demo1.com"
+    ],
+    "author": "Bardh Arifi"
   },
   {
     "id": 2,
@@ -22,7 +33,18 @@
     ],
     "link": "https://github.com/Villa25698/Software_engineer-g1",
     "createdAt": "2024-03-10",
-    "category": "Coursework"
+    "category": "Coursework",
+    "status": "In Progress",
+    "tags": [
+      "Vue",
+      "JavaScript",
+      "Engineering"
+    ],
+    "public": false,
+    "demos": [
+      "https://demo2.com"
+    ],
+    "author": "Bardh Arifi"
   },
   {
     "id": 3,
@@ -33,7 +55,17 @@
     ],
     "link": "https://github.com/Villa25698/password_checker_stregth",
     "createdAt": "2024-06-20",
-    "category": "Personal Project"
+    "category": "Personal Project",
+    "status": "Completed",
+    "tags": [
+      "Java",
+      "Security"
+    ],
+    "public": true,
+    "demos": [
+      "https://demo3.com"
+    ],
+    "author": "Bardh Arifi"
   },
   {
     "id": 4,
@@ -44,6 +76,36 @@
     ],
     "link": "https://hr.lipsum.com/",
     "createdAt": "2024-09-25",
-    "category": "test"
+    "category": "Test",
+    "status": "Testing",
+    "tags": [
+      "Test",
+      "Java"
+    ],
+    "public": false,
+    "demos": [
+      "https://demo4.com"
+    ],
+    "author": "Bardh Arifi"
+  },
+  {
+    "id": 5,
+    "title": "test123",
+    "description": "lol",
+    "Languages": [
+      "java"
+    ],
+    "link": "https://www.vg.no/",
+    "category": "lol",
+    "createdAt": "2024-10-25",
+    "status": "ok",
+    "tags": [
+      "cool"
+    ],
+    "public": false,
+    "demos": [
+      "https://demo4.com"
+    ],
+    "author": ""
   }
 ]

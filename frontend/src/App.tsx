@@ -1,21 +1,14 @@
-import Header from './Header';
-import Bio from './Bio';
-import Projects from './Projects';
-import Footer from './Footer';  
-import ContactForm from './ContactForm';
+import React from 'react';
+import Layout from './components/Layout';
+import PortfolioPage from './components/PortfolioPage';
 
-function App() {
+
+const App = () => {
   return (
-    <>
-      <Header />
-      <main>
-        <Bio />
-        <Projects />
-        <ContactForm />
-      </main>
-      <Footer />
-    </>
+    <Layout>
+      <PortfolioPage />
+    </Layout>
   );
-}
+};
 
 export default App;
