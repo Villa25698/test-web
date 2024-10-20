@@ -1,0 +1,35 @@
+model Project {
+  id         Int       @id @default(autoincrement())
+  title      String
+  description String
+  status     String
+  link       String
+  createdAt  DateTime
+  category   String
+  public     Boolean
+  author     String
+  languages  Language[] 
+  tags       Tag[]
+  demos      Demo[]
+}
+
+model Demo {
+  id       Int      @id @default(autoincrement())
+  url      String
+  project  Project  @relation(fields: [projectId], references: [id])
+  projectId Int
+}
+
+model Language {
+  id        Int      @id @default(autoincrement())
+  name      String
+  project   Project @relation(fields: [projectId], references: [id])
+  projectId Int
+}
+
+model Tag {
+  id        Int      @id @default(autoincrement())
+  name      String
+  project   Project? @relation(fields: [projectId], references: [id])
+  projectId Int?
+}

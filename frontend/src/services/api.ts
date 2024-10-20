@@ -19,3 +19,10 @@ export const addProject = async (newProject: any) => {
     }
   };
   
+
+  export const getProjects = async () => {
+    const response = await fetch('/projects', { credentials: 'include' });
+    const data = await response.json();
+    return data;
+  };
+  
