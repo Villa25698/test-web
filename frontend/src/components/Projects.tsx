@@ -53,7 +53,7 @@ const Projects = () => {
               <article className="bg-white border border-gray-400 rounded-lg shadow-md p-6 flex flex-col justify-between">
                 <h3 className="text-xl font-bold mb-2 text-center">{project.title}</h3>
                 <p className="text-sm text-gray-600 mb-4 text-center">{project.description}</p>
-                <p className="text-sm mb-4 text-center text-gray-500">Languages: {project.Languages.join(', ')}</p>
+                <p className="text-sm mb-4 text-center text-gray-500">Languages: {project.languages.join(', ')}</p>
                 <p className="text-sm mb-4 text-center text-gray-400">
                   Published: {format(new Date(project.createdAt), 'dd MMM yyyy')}
                 </p>
