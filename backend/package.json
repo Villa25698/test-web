@@ -2,7 +2,8 @@
   "name": "backend",
   "scripts": {
     "start": "tsx src/index.ts",
-    "build": "tsc"
+    "build": "tsc",
+    "dev": "tsx watch src/index.ts"
   },
   "prisma": {
     "seed": "ts-node --transpile-only prisma/seed.ts"

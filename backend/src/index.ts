@@ -63,6 +63,38 @@ app.get('/projects', async (c) => {
   }
 });
 
+app.post('/add-project', async (c) => {
+  const newProject = await c.req.json();
+  try {
+    const project = await prisma.project.create({
+      data: {
+        title: newProject.title,
+        description: newProject.description,
+        status: newProject.status,
+        link: newProject.link,
+        createdAt: new Date(newProject.createdAt),
+        category: newProject.category,
+        public: newProject.public,
+        author: newProject.author,
+        languages: {
+          create: (newProject.languages || []).map((lang: string) => ({ name: lang })),
+        },
+        tags: {
+          create: (newProject.tags || []).map((tag: string) => ({ name: tag })),
+        },
+        demos: {
+          create: (newProject.demos || []).map((demo: string) => ({ url: demo })),
+        },
+      },
+    });
+    return c.json(project);
+  } catch (error) {
+    console.error('Error adding project:', error);
+    return c.json({ error: 'Failed to add project' }, 500);
+  }
+});
+
+
 
 
 

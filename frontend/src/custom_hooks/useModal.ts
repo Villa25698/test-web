@@ -1,3 +1,4 @@
+// useModal.ts
 import { useState } from 'react';
 import { z } from 'zod';
 
@@ -5,7 +6,7 @@ const ProjectSchema = z.object({
   id: z.number(),
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
-  Languages: z.array(z.string()).nonempty("At least one language is required"),
+  languages: z.array(z.string()).nonempty("At least one language is required"),
   link: z.string().url("Invalid URL"),
   category: z.string().min(1, "Category is required"),
   createdAt: z.string(),
@@ -19,7 +20,7 @@ interface Project {
   id: number;
   title: string;
   description: string;
-  Languages: string[];
+  languages: string[];
   link: string;
   category: string;
   createdAt: string;
@@ -49,12 +50,12 @@ const useModal = (onSave: (project: Project) => void) => {
       id: Math.floor(Math.random() * 10000),
       title,
       description,
-      Languages: languages.split(',').map(lang => lang.trim()),
+      languages: languages.split(',').map((lang) => lang.trim()),
       link,
       category,
       createdAt,
       status,
-      tags: tags.split(',').map(tag => tag.trim()),
+      tags: tags.split(',').map((tag) => tag.trim()),
       public: isPublic,
       author,
     };
@@ -63,7 +64,7 @@ const useModal = (onSave: (project: Project) => void) => {
 
     if (!result.success) {
       console.error("Validation errors:", result.error.errors);
-      alert("Validation failed: " + result.error.errors.map(e => e.message).join(", "));
+      alert("Validation failed: " + result.error.errors.map((e) => e.message).join(", "));
       return;
     }
 
@@ -87,6 +88,7 @@ const useModal = (onSave: (project: Project) => void) => {
 
   return {
     isModalOpen,
+    setIsModalOpen,
     title,
     description,
     languages,
@@ -97,7 +99,6 @@ const useModal = (onSave: (project: Project) => void) => {
     tags,
     isPublic,
     author,
-    setIsModalOpen,
     setTitle,
     setDescription,
     setLanguages,

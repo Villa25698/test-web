@@ -26,7 +26,10 @@ const Modal: React.FC<{ onSave: (project: any) => void }> = ({ onSave }) => {
     setIsPublic,
     setAuthor,
     handleSubmit,
-  } = useModal(onSave);
+  } = useModal((projectData) => {
+    onSave(projectData);
+    setIsModalOpen(false);
+  });
 
   return (
     <>
