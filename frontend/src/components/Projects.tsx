@@ -1,10 +1,11 @@
+
 import React from 'react';
 import useProjects from '../custom_hooks/useProjects';
 import Modal from '../Modal';
 import { format } from 'date-fns';
 
 const Projects = () => {
-  const { projects, showCategoryCount, setShowCategoryCount, categoryCount, addProject } = useProjects();
+  const { projects, showCategoryCount, setShowCategoryCount, categoryCount, addProject, deleteProject, updateProject } = useProjects();
 
   return (
     <section id="projects" className="w-full flex flex-col items-center py-10 relative z-20">
@@ -15,15 +16,6 @@ const Projects = () => {
           className="bg-primary-500 text-white px-6 py-2 rounded-lg shadow-md hover:bg-blue-600 hover:shadow-lg active:bg-blue-700 transition-all duration-200 border-2 border-gray-300 flex items-center"
         >
           <span>Show Project Count</span>
-          <svg
-            className="w-5 h-5 ml-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
         </button>
       </div>
 
@@ -43,22 +35,31 @@ const Projects = () => {
       <div className="relative z-10 p-8 rounded-lg shadow-xl w-11/12 max-w-7xl border-2 bg-secondary-200">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projects.map((project) => (
-            <a
-              key={project.id}
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block transform transition-transform duration-200 hover:scale-105 hover:z-10"
-            >
-              <article className="bg-white border border-gray-400 rounded-lg shadow-md p-6 flex flex-col justify-between">
+            <div key={project.id} className="block transform transition-transform duration-200 hover:scale-105 hover:z-10">
+              <article className="bg-white border border-gray-400 rounded-lg shadow-md p-6 flex flex-col justify-between relative">
                 <h3 className="text-xl font-bold mb-2 text-center">{project.title}</h3>
                 <p className="text-sm text-gray-600 mb-4 text-center">{project.description}</p>
                 <p className="text-sm mb-4 text-center text-gray-500">Languages: {project.languages.join(', ')}</p>
                 <p className="text-sm mb-4 text-center text-gray-400">
                   Published: {format(new Date(project.createdAt), 'dd MMM yyyy')}
                 </p>
+                
+                <div className="flex justify-between mt-4">
+                  <button 
+                    className="bg-yellow-500 text-white px-4 py-2 rounded-lg hover:bg-yellow-600 w-1/2 mr-2"
+                    onClick={() => updateProject(project)}
+                  >
+                    Update
+                  </button>
+                  <button 
+                    className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 w-1/2 ml-2"
+                    onClick={() => deleteProject(project.id)}
+                  >
+                    Delete
+                  </button>
+                </div>
               </article>
-            </a>
+            </div>
           ))}
         </div>
       </div>

@@ -1,0 +1,28 @@
+enderinger som jeg har gjort fra v2 til v3
+
+- lagde custom hooks for componenetene slik at .tsx fil skulle bare ha view og ikkenoe logikk kode i dem
+
+- endret fil struktur på frontend
+
+- converte fra vanlig css til tailwind
+
+- la til layout og page
+
+- bruker zod
+
+- parser datoer 
+
+- utvided projektet og la til relatert data
+
+- byttet hvor lagring fra json til prisma med seed.
+
+- satt opp crud på databasen. fikk ikke til update på frontend
+
+- fikk ikke satt opp lagdeling
+
+- la til gamle tilbake og lagd nye wireframe
+
+-  lagd til små endringer på config bla. prisma og watcher for backend.
+
+- endret utsende på nettsiden til å tilpasse bedre for pc.
+

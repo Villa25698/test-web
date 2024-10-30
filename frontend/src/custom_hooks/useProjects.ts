@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { z } from 'zod';
-import { addProject as addProjectToBackend } from '../services/api'; 
-
+import { addProject as addProjectToBackend, deleteProject as deleteProjectFromBackend, updateProject as updateProjectInBackend } from '../services/api';
 
 const ProjectSchema = z.object({
   id: z.number(),
@@ -82,8 +81,25 @@ const useProjects = () => {
     addProjectToBackend(newProject);
   };
 
-  return { projects, showCategoryCount, setShowCategoryCount, categoryCount, addProject };
+  const deleteProject = async (id: number) => {
+    try {
+      await deleteProjectFromBackend(id);
+      setProjects(projects.filter((project) => project.id !== id));
+    } catch (error) {
+      console.error('Error deleting project:', error);
+    }
+  };
+
+  const updateProject = async (updatedProject: Project) => {
+    try {
+      const updated = await updateProjectInBackend(updatedProject);
+      setProjects(projects.map((project) => (project.id === updated.id ? updated : project)));
+    } catch (error) {
+      console.error('Error updating project:', error);
+    }
+  };
+
+  return { projects, setProjects, showCategoryCount, setShowCategoryCount, categoryCount, addProject, deleteProject, updateProject };
 };
 
 export default useProjects;
-
