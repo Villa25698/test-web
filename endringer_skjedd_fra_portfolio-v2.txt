@@ -26,3 +26,5 @@ enderinger som jeg har gjort fra v2 til v3
 
 - endret utsende på nettsiden til å tilpasse bedre for pc.
 
+
+edit: glemte å si at seed funker man må bare fjerne .bak dleen fra json filen så kjører den.
